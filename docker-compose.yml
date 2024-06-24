@@ -1,0 +1,13 @@
+services:
+  invygo:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command: npm run start:dev
+    target: development
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./src:/app/src
+  mongo:
+   image: mongo      
